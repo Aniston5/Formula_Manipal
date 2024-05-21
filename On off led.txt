@@ -1,0 +1,15 @@
+const int ledPin = 13;
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+  digitalWrite(ledPin, LOW);
+}
+
+void loop() {
+  char Byte = Serial.read();
+  if (Byte == '1') {
+    digitalWrite(ledPin, HIGH);
+  } else if (Byte == '0') {
+    digitalWrite(ledPin, LOW);
+  }
+}
